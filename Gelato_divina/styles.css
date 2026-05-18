@@ -73,13 +73,19 @@ body::before {
   padding-right: 64px;
 }
 @media (max-width: 768px) {
-  .container { padding-left: 24px; padding-right: 24px; }
+  .container { padding-left: 20px; padding-right: 20px; }
+}
+@media (max-width: 480px) {
+  .container { padding-left: 16px; padding-right: 16px; }
 }
 
 .section { padding-top: 128px; padding-bottom: 128px; }
 .section-sm { padding-top: 96px; padding-bottom: 96px; }
 @media (max-width: 768px) {
-  .section, .section-sm { padding-top: 64px; padding-bottom: 64px; }
+  .section, .section-sm { padding-top: 56px; padding-bottom: 56px; }
+}
+@media (max-width: 480px) {
+  .section, .section-sm { padding-top: 48px; padding-bottom: 48px; }
 }
 
 /* ---------- typography ---------- */
@@ -178,12 +184,26 @@ body::before {
   -webkit-backdrop-filter: blur(14px) saturate(120%);
   border-bottom: 1px solid var(--line-soft);
 }
+/* On mobile the drawer is fixed positioned and must escape the nav.
+   backdrop-filter creates a containing block for fixed descendants,
+   which traps the drawer inside the nav. Disable backdrop-filter and
+   raise the nav above the backdrop layer so the drawer (rendered inside
+   the nav's stacking context) shows above the dim overlay. */
+@media (max-width: 900px) {
+  .nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: rgba(244, 234, 216, 0.97);
+    z-index: 60;
+  }
+}
 .nav-inner {
   max-width: 1440px; margin: 0 auto;
   padding: 20px 64px;
   display: flex; align-items: center; justify-content: space-between; gap: 32px;
 }
-@media (max-width: 768px) { .nav-inner { padding: 16px 24px; } }
+@media (max-width: 768px) { .nav-inner { padding: 14px 20px; gap: 16px; } }
+@media (max-width: 480px) { .nav-inner { padding: 12px 16px; gap: 12px; } }
 
 .nav-logo {
   font-family: var(--font-display); font-weight: 300;
@@ -191,6 +211,7 @@ body::before {
   letter-spacing: -0.01em;
   display: flex; align-items: center; gap: 12px;
 }
+@media (max-width: 480px) { .nav-logo { font-size: 1.25rem; gap: 10px; } }
 .nav-logo .italic { color: var(--gold-deep); }
 .nav-logo-dot {
   width: 8px; height: 8px;
@@ -327,9 +348,7 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
     content: "";
     position: fixed; inset: 0;
     background: rgba(61,46,31,0.45);
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    z-index: 55;
+    z-index: 50;
   }
 }
 
@@ -451,7 +470,8 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
    PAGE HEADER (interior pages)
    ===================================================================== */
 .page-header { padding-top: 96px; padding-bottom: 72px; position: relative; overflow: hidden; }
-@media (max-width: 768px) { .page-header { padding-top: 56px; padding-bottom: 48px; } }
+@media (max-width: 768px) { .page-header { padding-top: 48px; padding-bottom: 40px; } }
+@media (max-width: 480px) { .page-header { padding-top: 36px; padding-bottom: 32px; } }
 .page-header::before {
   content: ""; position: absolute;
   top: -10%; right: -10%;
@@ -1058,22 +1078,15 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
   margin-bottom: 64px;
 }
 @media (max-width: 768px) {
-  .menu-nav { top: 68px; padding: 12px 0; margin-bottom: 40px; }
+  .menu-nav { top: 64px; padding: 10px 0; margin-bottom: 32px; }
 }
 .menu-nav-inner {
   display: flex; gap: 10px;
-  flex-wrap: nowrap; justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 @media (max-width: 768px) {
-  .menu-nav-inner {
-    overflow-x: auto;
-    justify-content: flex-start;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    padding-left: 20px; padding-right: 20px;
-    margin-left: -24px; margin-right: -24px;
-  }
-  .menu-nav-inner::-webkit-scrollbar { display: none; }
+  .menu-nav-inner { gap: 6px; row-gap: 8px; }
   .menu-chip { flex-shrink: 0; }
 }
 .menu-chip {
@@ -1087,6 +1100,10 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
   letter-spacing: 0.05em; text-transform: uppercase;
   cursor: pointer;
   transition: all 200ms var(--ease-out);
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .menu-chip { padding: 7px 14px; font-size: 0.75rem; letter-spacing: 0.04em; }
 }
 .menu-chip:hover {
   border-color: var(--gold);
@@ -1109,8 +1126,8 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
   border-bottom: 1px solid var(--line-soft);
 }
 @media (max-width: 768px) {
-  .menu-group-head { grid-template-columns: 1fr; gap: 12px; margin-bottom: 32px; padding-bottom: 20px; }
-  .menu-group { margin-top: 80px; }
+  .menu-group-head { grid-template-columns: 1fr; gap: 10px; margin-bottom: 28px; padding-bottom: 18px; }
+  .menu-group { margin-top: 64px; }
   .menu-group p { font-size: 0.9375rem; }
 }
 .menu-group-head h2 .italic { color: var(--gold-deep); }
@@ -1267,6 +1284,10 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
 }
 @media (max-width: 1024px) { .flavors-photo-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
 @media (max-width: 640px)  { .flavors-photo-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; } }
+
+/* Modifier for 3-card sections (kolaci, kava, specijaliteti) — keeps 3 cols on desktop/tablet, drops to 2 on mobile */
+.flavors-photo-grid--triple { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 640px) { .flavors-photo-grid--triple { grid-template-columns: repeat(2, 1fr); } }
 
 .flavor-card {
   position: relative;
