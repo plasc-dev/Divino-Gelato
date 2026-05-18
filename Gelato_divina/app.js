@@ -8,6 +8,38 @@
   var yEl = document.getElementById('year');
   if (yEl) yEl.textContent = new Date().getFullYear();
 
+  /* ---------- mobile hamburger nav ---------- */
+  var navToggle = document.querySelector('.nav-toggle');
+  if (navToggle) {
+    function setNavOpen(open) {
+      document.body.classList.toggle('nav-open', open);
+      navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      navToggle.setAttribute('aria-label', open ? 'Zatvori meni' : 'Otvori meni');
+    }
+    navToggle.addEventListener('click', function () {
+      setNavOpen(!document.body.classList.contains('nav-open'));
+    });
+    // close on link click (within drawer)
+    document.querySelectorAll('.nav-links a').forEach(function (a) {
+      a.addEventListener('click', function () { setNavOpen(false); });
+    });
+    // close on ESC
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && document.body.classList.contains('nav-open')) setNavOpen(false);
+    });
+    // close on backdrop click (the ::after pseudo-element click)
+    document.addEventListener('click', function (e) {
+      if (!document.body.classList.contains('nav-open')) return;
+      var clickedToggle = e.target.closest('.nav-toggle');
+      var clickedDrawer = e.target.closest('.nav-links');
+      if (!clickedToggle && !clickedDrawer) setNavOpen(false);
+    });
+    // close if window resizes back to desktop width
+    var mq = window.matchMedia('(min-width: 901px)');
+    mq.addEventListener ? mq.addEventListener('change', function (ev) { if (ev.matches) setNavOpen(false); })
+                       : mq.addListener(function (ev) { if (ev.matches) setNavOpen(false); });
+  }
+
   /* ---------- mark today + update open pill ---------- */
   var hoursList = document.getElementById('hoursList');
   if (hoursList) {
