@@ -117,7 +117,7 @@ body::before {
 .italic { font-style: italic; font-weight: 300; }
 
 @media (max-width: 768px) {
-  .display-xl { font-size: 3.75rem; line-height: 0.95; }
+  .display-xl { font-size: 4.75rem; line-height: 0.92; letter-spacing: -0.035em; }
   .display-lg { font-size: 3rem; }
   .h1 { font-size: 2.5rem; }
   .h2 { font-size: 2rem; }
@@ -126,7 +126,7 @@ body::before {
   .lead { font-size: 1.0625rem; line-height: 1.55; }
 }
 @media (max-width: 480px) {
-  .display-xl { font-size: 3rem; }
+  .display-xl { font-size: 4rem; line-height: 0.92; }
   .display-lg { font-size: 2.5rem; }
   .h1 { font-size: 2.125rem; }
   .h2 { font-size: 1.75rem; }
