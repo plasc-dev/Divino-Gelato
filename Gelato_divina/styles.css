@@ -35,7 +35,10 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: clip;
+}
 
 body {
   margin: 0;
@@ -46,7 +49,8 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100vw;
 }
 
 img { display: block; max-width: 100%; height: auto; }
@@ -750,6 +754,31 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
   gap: 80px; align-items: start;
 }
 @media (max-width: 1024px) { .posjet-grid { grid-template-columns: 1fr; gap: 48px; } }
+
+/* Posjetite — desktop: 2-col (contact + image), map full-width below.
+   Mobile: contact → map → image stacked. */
+.posjet-layout {
+  display: grid;
+  grid-template-columns: 7fr 5fr;
+  grid-template-areas:
+    "contact image"
+    "map     map";
+  gap: 80px;
+}
+.posjet-layout .contact-block { grid-area: contact; }
+.posjet-layout .posjet-image  { grid-area: image; }
+.posjet-layout .map-wrap      { grid-area: map; margin-top: 0; }
+
+@media (max-width: 1024px) {
+  .posjet-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  .posjet-layout .contact-block { order: 1; }
+  .posjet-layout .map-wrap      { order: 2; }
+  .posjet-layout .posjet-image  { order: 3; }
+}
 .posjet-image {
   aspect-ratio: 4 / 5;
   border-radius: 4px; overflow: hidden;
@@ -1689,8 +1718,9 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
     display: inline-flex;
     align-items: center; justify-content: center;
     position: fixed;
-    bottom: 20px; right: 20px;
-    width: 56px; height: 56px;
+    bottom: max(20px, env(safe-area-inset-bottom));
+    right: max(20px, env(safe-area-inset-right));
+    width: 54px; height: 54px;
     border-radius: 999px;
     background: var(--espresso);
     color: var(--cream);
@@ -1703,17 +1733,18 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
   .floating-phone svg { width: 22px; height: 22px; }
   .floating-phone::before {
     content: "";
-    position: absolute; inset: -4px;
+    position: absolute; inset: 0;
     border-radius: 999px;
     border: 2px solid var(--gold);
     opacity: 0.7;
     animation: phone-pulse 2.6s ease-out infinite;
     pointer-events: none;
+    will-change: transform, opacity;
   }
   @keyframes phone-pulse {
     0%   { transform: scale(1);   opacity: 0.7; }
-    70%  { transform: scale(1.5); opacity: 0; }
-    100% { transform: scale(1.5); opacity: 0; }
+    70%  { transform: scale(1.25); opacity: 0; }
+    100% { transform: scale(1.25); opacity: 0; }
   }
   /* hide while drawer open so it doesn't overlap */
   body.nav-open .floating-phone { opacity: 0; pointer-events: none; }
