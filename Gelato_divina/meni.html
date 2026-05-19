@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Meni — Divino Gelato</title>
-<meta name="description" content="Cijeli meni Divino Gelata — više od 20 okusa gelata, klasici, voćni, veganski, bezglutenski, kolači, kava i specijaliteti." />
+<meta name="description" content="Meni Divino Gelata — gelato klasici, voćni i veganski okusi, specijaliteti, kolači i kava. Sa cijenama." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -50,14 +50,12 @@
 <section class="page-header">
   <div class="container">
     <div class="page-header-inner">
-      <p class="eyebrow reveal">Naš meni</p>
+      <p class="eyebrow reveal">Sve cijene jasno označene</p>
       <h1 class="display-lg reveal">
-        Više od 20 okusa,<br />jedan <span class="italic">standard</span>.
+        <span class="italic">Meni</span>.
       </h1>
-      <p class="lead reveal">
-        Klasici koji uvijek stoje u vitrini, voćni okusi sa preko 2,5 kg svježeg voća po
-        kadici, kremasti specijaliteti i veganske bezglutenske opcije.
-        Cijene su orijentacijske — pitajte za današnju ponudu.
+      <p class="lead reveal" style="margin-top: 20px;">
+        Više od 20 okusa, kornete radimo pred vama.
       </p>
     </div>
   </div>
@@ -67,8 +65,7 @@
 <nav class="menu-nav" aria-label="Kategorije menija">
   <div class="container menu-nav-inner">
     <button class="menu-chip active" data-target="all">Sve</button>
-    <button class="menu-chip" data-target="gelato-klasici">Klasici</button>
-    <button class="menu-chip" data-target="gelato-vocni">Voćno &amp; vegansko</button>
+    <button class="menu-chip" data-target="gelato">Gelato</button>
     <button class="menu-chip" data-target="specijaliteti">Specijaliteti</button>
     <button class="menu-chip" data-target="kolaci">Kolači</button>
     <button class="menu-chip" data-target="kava">Kava</button>
@@ -79,218 +76,136 @@
 <section class="section-sm" style="padding-top: 0;">
   <div class="container">
 
-    <!-- ============== KLASICI ============== -->
-    <article class="menu-group" id="gelato-klasici">
+    <!-- ============== GELATO — PORCIJE ============== -->
+    <article class="menu-group" id="gelato">
       <header class="menu-group-head">
         <div>
-          <p class="eyebrow">Gelato klasici</p>
-          <h2 class="h2">Klasici i <span class="italic">kremasti</span> okusi</h2>
+          <p class="eyebrow">Gelato</p>
+          <h2 class="h2">Porcije</h2>
         </div>
-        <p>Uvijek u vitrini. Bogata, gusta tekstura iz manje zraka i više mlijeka.</p>
       </header>
 
-      <!-- PRICES FIRST -->
-      <div class="menu-list">
-        <div class="menu-item">
-          <div>
-            <h4>Kornet · 1 kuglica</h4>
-            <p class="menu-item-desc">Hrskavi kornet rađen pred vama, jedna kuglica po izboru.</p>
+      <div class="menu-cards-grid">
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/cones-pistachio-chocolate.png" alt="Kornet s jednom kuglicom gelata." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Kornet · 1 kuglica</h4>
+            <span class="menu-card-price">2,50 €</span>
           </div>
-          <span class="menu-item-price">2,50 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Kornet · 2 kuglice <span class="menu-item-tag">Najpopularnije</span></h4>
-            <p class="menu-item-desc">Dvije kuglice u svježem kornetu — naša najtraženija porcija.</p>
+        </article>
+        <article class="menu-card reveal">
+          <span class="menu-card-tag tag-best">Najpopularnije</span>
+          <div class="menu-card-img"><img src="brand_assets/flavor-cone-pistachio.png" alt="Kornet s dvije kuglice gelata." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Kornet · 2 kuglice</h4>
+            <span class="menu-card-price">3,80 €</span>
           </div>
-          <span class="menu-item-price">3,80 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Čaša · 2 kuglice</h4>
-            <p class="menu-item-desc">Dvije kuglice u čaši s žličicom.</p>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/cup-raspberry.png" alt="Čaša s dvije kuglice gelata." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Čaša · 2 kuglice</h4>
+            <span class="menu-card-price">3,80 €</span>
           </div>
-          <span class="menu-item-price">3,80 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Čaša · 3 kuglice</h4>
-            <p class="menu-item-desc">Tri okusa po izboru — savršeno za probu.</p>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/gelato-cup.png" alt="Čaša s tri kuglice gelata sa šlagom." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Čaša · 3 kuglice</h4>
+            <span class="menu-card-price">5,20 €</span>
           </div>
-          <span class="menu-item-price">5,20 €</span>
-        </div>
+        </article>
       </div>
 
-      <!-- PHOTOS BELOW -->
-      <div class="flavors-photo-grid" style="margin-top: 64px;">
-        <article class="flavor-card reveal">
-          <span class="flavor-card-tag tag-best">Bestseller</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-pistachio.png" alt="Pistacija gelato u vitrini sa zdrobljenom pistacijom." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Pistacija</h4>
-            <p class="flavor-meta">Naš najprodavaniji okus — komadići svježih pistacija.</p>
-          </div>
-        </article>
+      <!-- FLAVOR GALLERY (visual choice — same prices as above) -->
+      <header class="menu-group-head" style="margin-top: 80px;">
+        <div>
+          <p class="eyebrow">Okusi · 20+</p>
+          <h2 class="h2">Što biramo</h2>
+        </div>
+      </header>
 
+      <div class="flavors-photo-grid">
         <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/flavor-pistachio-chocolate.png" alt="Tamna čokolada gelato uz pistaciju u vitrini." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Tamna čokolada</h4>
-            <p class="flavor-meta">Intenzivna, gorko-slatka — bez kompromisa.</p>
-          </div>
+          <span class="flavor-card-tag tag-best">Hit</span>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-pistachio.png" alt="Pistacija gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Pistacija</h4></div>
         </article>
-
         <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/flavor-stracciatella.png" alt="Stracciatella gelato — bijela baza s tamnim listićima čokolade." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Stracciatella</h4>
-            <p class="flavor-meta">Kremasta vanilija s tankim listićima čokolade.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-pistachio-chocolate.png" alt="Tamna čokolada gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Tamna čokolada</h4></div>
         </article>
-
         <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/flavor-vanilla.png" alt="Bourbon vanilija gelato — čista kremasta bjelina." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Vanilija</h4>
-            <p class="flavor-meta">Prava vanilija mahuna, kuhana sa svježim mlijekom.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-stracciatella.png" alt="Stracciatella gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Stracciatella</h4></div>
         </article>
-
         <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/flavor-hazelnut.png" alt="Lješnjak gelato sa lješnjacima posutim navrh." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Lješnjak</h4>
-            <p class="flavor-meta">Praženi lješnjaci u gustoj, kremastoj bazi.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-vanilla.png" alt="Vanilija gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Vanilija</h4></div>
         </article>
-
+        <article class="flavor-card reveal">
+          <div class="flavor-card-img"><img src="brand_assets/flavor-hazelnut.png" alt="Lješnjak gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Lješnjak</h4></div>
+        </article>
         <article class="flavor-card reveal">
           <span class="flavor-card-tag">Premium</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-bajadera.png" alt="Cremino bajadera — tamna čokolada sa pistacijom i malinom." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Cremino bajadera</h4>
-            <p class="flavor-meta">Inspiriran legendarnom Bajaderom — lješnjak i čokolada.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-bajadera.png" alt="Cremino bajadera." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Cremino bajadera</h4></div>
         </article>
-
         <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/flavor-vanilla-raspberry.png" alt="Bijela čokolada gelato sa prelivom maline." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Bijela čokolada &amp; malina</h4>
-            <p class="flavor-meta">Slatko, kremasto, ali sa svježim kiselim notama maline.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-vanilla-raspberry.png" alt="Bijela čokolada s malinom." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Bijela čokolada &amp; malina</h4></div>
         </article>
-
         <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/flavor-salted-caramel.png" alt="Divino slana karamela sa kikirikijem posutim navrh." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Divino slana karamela</h4>
-            <p class="flavor-meta">Naša verzija — sa praženim kikirikijem za hrskavost.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-salted-caramel.png" alt="Slana karamela s kikirikijem." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Slana karamela</h4></div>
         </article>
-      </div>
-    </article>
-
-    <!-- ============== VOĆNO / VEGAN ============== -->
-    <article class="menu-group" id="gelato-vocni">
-      <header class="menu-group-head">
-        <div>
-          <p class="eyebrow">Voćno · Vegan · Bez glutena</p>
-          <h2 class="h2">Svježe voće, <span class="italic">jednostavno</span></h2>
-        </div>
-        <p>Preko 2,5 kg svježeg voća u svaku kadicu. Bez mlijeka, bez glutena — ali punog okusa.</p>
-      </header>
-
-      <!-- PRICE NOTE -->
-      <div style="background: var(--paper); border: 1px solid var(--line-soft); border-radius: 4px; padding: 24px 28px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap;">
-        <div style="display: flex; align-items: center; gap: 12px;">
-          <span style="width: 36px; height: 36px; border-radius: 999px; background: var(--cream-deep); color: var(--gold-deep); display: inline-flex; align-items: center; justify-content: center;">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 2"/></svg>
-          </span>
-          <div>
-            <span class="label" style="display: block; margin-bottom: 2px;">Iste porcije i cijene</span>
-            <p style="margin: 0; font-family: var(--font-display); font-weight: 500; color: var(--espresso);">Kao kod klasika — od 2,50 €</p>
-          </div>
-        </div>
-        <p style="margin: 0 0 0 auto; color: var(--cocoa); font-size: 0.9375rem; max-width: 38ch;">
-          Voćni i veganski okusi dostupni u kornetu ili čaši, u istim porcijama i cijenama kao klasici.
-        </p>
-      </div>
-
-      <!-- PHOTOS BELOW -->
-      <div class="flavors-photo-grid" style="margin-top: 48px;">
         <article class="flavor-card reveal">
           <span class="flavor-card-tag tag-vegan">Vegan</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-mango.png" alt="Mango gelato — intenzivno žuta krema u vitrini." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Mango</h4>
-            <p class="flavor-meta">Zreli mango, bez ikakvih dodataka.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-mango.png" alt="Mango gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Mango</h4></div>
         </article>
-
         <article class="flavor-card reveal">
           <span class="flavor-card-tag tag-vegan">Vegan</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-raspberry-rose.png" alt="Ružičasti gelato od maline s laticama ruže posutim navrh." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Malina</h4>
-            <p class="flavor-meta">Intenzivna, lagano kisela — posuta laticama ruže.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-raspberry-rose.png" alt="Malina s laticama ruže." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Malina</h4></div>
         </article>
-
         <article class="flavor-card reveal">
           <span class="flavor-card-tag tag-vegan">Vegan</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-forest-fruit.png" alt="Šumsko voće gelato s tamnim bobicama." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Šumsko voće</h4>
-            <p class="flavor-meta">Borovnice, kupine, maline — sve zajedno.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-forest-fruit.png" alt="Šumsko voće." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Šumsko voće</h4></div>
         </article>
-
+        <article class="flavor-card reveal">
+          <span class="flavor-card-tag tag-vegan">Vegan</span>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-lavender.png" alt="Limun i lavanda." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Limun &amp; lavanda</h4></div>
+        </article>
+        <article class="flavor-card reveal">
+          <span class="flavor-card-tag tag-vegan">Vegan</span>
+          <div class="flavor-card-img"><img src="brand_assets/lifestyle-orange-cups.png" alt="Naranča gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Naranča</h4></div>
+        </article>
+        <article class="flavor-card reveal">
+          <span class="flavor-card-tag tag-vegan">Vegan</span>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-peach.png" alt="Breskva gelato." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Breskva</h4></div>
+        </article>
         <article class="flavor-card flavor-card-text reveal" style="--accent-1: #F4E098; --accent-2: #C8A030;">
           <span class="flavor-card-tag tag-vegan">Vegan</span>
           <div class="flavor-text-mark"><span class="italic">Limun</span></div>
-          <div class="flavor-card-body">
-            <h4>Limun</h4>
-            <p class="flavor-meta">Svjež domaći limun — kao osvježenje između okusa.</p>
-          </div>
+          <div class="flavor-card-body"><h4>Limun</h4></div>
         </article>
-
-        <article class="flavor-card reveal">
-          <span class="flavor-card-tag tag-vegan">Vegan</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-lavender.png" alt="Lavanda gelato — nježno ljubičasta krema u vitrini." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Limun &amp; lavanda</h4>
-            <p class="flavor-meta">Limun + cvjetna lavanda — neočekivano, ali pravi hit.</p>
-          </div>
-        </article>
-
-        <article class="flavor-card reveal">
-          <span class="flavor-card-tag tag-vegan">Vegan</span>
-          <div class="flavor-card-img"><img src="brand_assets/lifestyle-orange-cups.png" alt="Tri čaše voćnog gelata sa kolutićima naranče navrh." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Naranča</h4>
-            <p class="flavor-meta">Sočna naranča s blagom gorčinom od kore.</p>
-          </div>
-        </article>
-
-        <article class="flavor-card reveal">
-          <span class="flavor-card-tag tag-vegan">Vegan</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-peach.png" alt="Breskva gelato — sezonska topla narančasto-roze nota." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Breskva</h4>
-            <p class="flavor-meta">Sočna, zrela ljetna breskva — ide samo u sezoni.</p>
-          </div>
-        </article>
-
         <article class="flavor-card reveal">
           <span class="flavor-card-tag tag-new">Novo</span>
-          <div class="flavor-card-img"><img src="brand_assets/flavor-cone-pistachio.png" alt="Kornet s Dubai čokoladom — novi hit." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Dubai čokolada</h4>
-            <p class="flavor-meta">Pistacija, hrskavo tijesto i čokolada — novi hit.</p>
-          </div>
+          <div class="flavor-card-img"><img src="brand_assets/flavor-cone-pistachio.png" alt="Dubai čokolada." loading="lazy" /></div>
+          <div class="flavor-card-body"><h4>Dubai čokolada</h4></div>
         </article>
       </div>
+
+      <p class="menu-note">
+        <span>Bilo koji okus, cijena prema porciji.</span>
+        <strong>od 2,50 €</strong>
+      </p>
     </article>
 
     <!-- ============== SPECIJALITETI ============== -->
@@ -298,81 +213,38 @@
       <header class="menu-group-head">
         <div>
           <p class="eyebrow">Specijaliteti</p>
-          <h2 class="h2">
-            Fontana <span class="italic">čokoladnih</span> snova
-          </h2>
+          <h2 class="h2">Posebne čaše</h2>
         </div>
-        <p>Čaše, fontane, sundae i affogato — kad gelato traži malo više okvira.</p>
       </header>
 
-      <!-- PRICES FIRST -->
-      <div class="menu-list">
-        <div class="menu-item">
-          <div>
-            <h4>Fontana čokoladnih snova <span class="menu-item-tag">Hit</span></h4>
-            <p class="menu-item-desc">Čokoladni preljev na dnu toplog korneta + tri kuglice po izboru.</p>
-          </div>
-          <span class="menu-item-price">5,80 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Cremino čaša sa šlagom</h4>
-            <p class="menu-item-desc">Slojevi gelata, šlag, čokoladni preliv i mali keksi.</p>
-          </div>
-          <span class="menu-item-price">4,50 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Gelato u velikoj čaši · 3 kuglice</h4>
-            <p class="menu-item-desc">Slobodan izbor okusa, posuto pistacijom ili kakaom.</p>
-          </div>
-          <span class="menu-item-price">5,20 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Affogato <span class="menu-item-tag">Klasik</span></h4>
-            <p class="menu-item-desc">Kuglica vanilije ili pistacije, preliven svježim espressom.</p>
-          </div>
-          <span class="menu-item-price">3,50 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Cannoli</h4>
-            <p class="menu-item-desc">Hrskava ljuska, ricotta krema, pistacija i čokolada na rubovima.</p>
-          </div>
-          <span class="menu-item-price">3,20 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Voćna čaša · sezonska</h4>
-            <p class="menu-item-desc">Sezonsko voće, voćni gelato i mali preliv.</p>
-          </div>
-          <span class="menu-item-price">4,80 €</span>
-        </div>
-      </div>
-
-      <!-- PHOTOS BELOW -->
-      <div class="flavors-photo-grid" style="margin-top: 64px;">
-        <article class="flavor-card reveal" style="grid-column: span 2;">
-          <span class="flavor-card-tag tag-new">Hit</span>
-          <div class="flavor-card-img"><img src="brand_assets/gelato-cup.png" alt="Čaša sa šlagom i čokoladnim prelivom." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Fontana čokoladnih snova</h4>
-            <p class="flavor-meta">Čokoladni preljev na dnu toplog korneta + tri kuglice.</p>
+      <div class="menu-cards-grid">
+        <article class="menu-card reveal">
+          <span class="menu-card-tag tag-new">Hit</span>
+          <div class="menu-card-img"><img src="brand_assets/gelato-cup.png" alt="Fontana čokoladnih snova — topli kornet, čokoladni preliv, tri kuglice." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Fontana čokoladnih snova</h4>
+            <span class="menu-card-price">5,80 €</span>
           </div>
         </article>
-        <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/affogato.png" alt="Affogato — espresso preko pistacije." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Affogato</h4>
-            <p class="flavor-meta">Kuglica gelata, preliven svježim espressom.</p>
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/affogato.png" alt="Affogato — espresso preko gelata." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Affogato</h4>
+            <span class="menu-card-price">3,50 €</span>
           </div>
         </article>
-        <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/cannoli.png" alt="Cannoli posut pistacijom i čokoladom." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Cannoli</h4>
-            <p class="flavor-meta">Hrskava ljuska, ricotta krema, pistacija na rubovima.</p>
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/cannoli.png" alt="Cannoli sa pistacijom i čokoladom." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Cannoli</h4>
+            <span class="menu-card-price">3,20 €</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/cup-raspberry.png" alt="Cremino čaša sa šlagom." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Cremino čaša sa šlagom</h4>
+            <span class="menu-card-price">4,50 €</span>
           </div>
         </article>
       </div>
@@ -383,66 +255,32 @@
       <header class="menu-group-head">
         <div>
           <p class="eyebrow">Slastice</p>
-          <h2 class="h2">
-            Kolači uz <span class="italic">popodnevnu</span> kavu
-          </h2>
+          <h2 class="h2">Kolači</h2>
         </div>
-        <p>Mali izbor kolača koji se mijenja kroz tjedan. Pitajte za današnji odabir.</p>
       </header>
 
-      <!-- PRICES FIRST -->
-      <div class="menu-list">
-        <div class="menu-item">
-          <div>
-            <h4>Tiramisu · komad</h4>
-            <p class="menu-item-desc">Mascarpone, savoiardi, espresso — klasika bez kompromisa.</p>
-          </div>
-          <span class="menu-item-price">3,80 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Tiramisu u čaši</h4>
-            <p class="menu-item-desc">Individualna verzija, savršeno za sebe ili za van.</p>
-          </div>
-          <span class="menu-item-price">3,50 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Sitni kolači · komad</h4>
-            <p class="menu-item-desc">Različiti komadi koji se mijenjaju kroz tjedan.</p>
-          </div>
-          <span class="menu-item-price">od 2,20 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Sitni kolači · dag</h4>
-            <p class="menu-item-desc">Mješavina po izboru, savršeno za van.</p>
-          </div>
-          <span class="menu-item-price">2,80 € / dag</span>
-        </div>
-      </div>
-
-      <!-- PHOTOS BELOW -->
-      <div class="flavors-photo-grid flavors-photo-grid--triple" style="margin-top: 64px;">
-        <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/tiramisu.png" alt="Tiramisu u čaši — slojevi mascarponea i čokolade." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Tiramisu</h4>
-            <p class="flavor-meta">Mascarpone, savoiardi, espresso — klasika.</p>
+      <div class="menu-cards-grid menu-cards-grid--triple">
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/tiramisu.png" alt="Tiramisu u čaši." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Tiramisu</h4>
+            <span class="menu-card-price">3,80 €</span>
           </div>
         </article>
-        <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/cannoli.png" alt="Cannoli sa pistacijom i čokoladom." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Cannoli</h4>
-            <p class="flavor-meta">Sicilijanski klasik — hrskavo i kremasto.</p>
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/tiramisu.png" alt="Tiramisu u čaši." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Tiramisu u čaši</h4>
+            <span class="menu-card-price">3,50 €</span>
           </div>
         </article>
-        <article class="flavor-card flavor-card-text reveal" style="--accent-1: #EBDFC4; --accent-2: #A8784A;">
-          <div class="flavor-text-mark"><span class="italic">Sitni</span><br /><span style="font-size:0.7em; font-style: normal;">kolači</span></div>
-          <div class="flavor-card-body">
-            <h4>Sitni kolači</h4>
-            <p class="flavor-meta">Različite komade biramo kroz tjedan.</p>
+        <article class="menu-card reveal">
+          <div class="menu-card-img menu-card-img--text" style="--accent-1: #EBDFC4; --accent-2: #A8784A;">
+            <span class="text-mark"><span class="italic">Sitni</span> kolači</span>
+          </div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Sitni kolači</h4>
+            <span class="menu-card-price">od 2,20 €</span>
           </div>
         </article>
       </div>
@@ -453,80 +291,61 @@
       <header class="menu-group-head">
         <div>
           <p class="eyebrow">Kava</p>
-          <h2 class="h2">
-            Talijanska zrna,<br /><span class="italic">domaća</span> brzina
-          </h2>
+          <h2 class="h2">Talijanska zrna</h2>
         </div>
-        <p>Mlinac se podešava svako jutro. Kratka, gusta — ona prava.</p>
       </header>
 
-      <!-- PRICES FIRST -->
-      <div class="menu-list">
-        <div class="menu-item">
-          <div>
-            <h4>Espresso</h4>
-            <p class="menu-item-desc">Kratka, gusta, ona prava.</p>
+      <div class="menu-cards-grid">
+        <article class="menu-card reveal">
+          <div class="menu-card-img menu-card-img--text" style="--accent-1: #C9A878; --accent-2: #5A3A1F;">
+            <span class="text-mark"><span class="italic">Espresso</span></span>
           </div>
-          <span class="menu-item-price">1,40 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Macchiato</h4>
-            <p class="menu-item-desc">Espresso s mrljom mlijeka.</p>
-          </div>
-          <span class="menu-item-price">1,60 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Capuccino</h4>
-            <p class="menu-item-desc">Klasik s nježnom mliječnom pjenom.</p>
-          </div>
-          <span class="menu-item-price">1,90 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Bijela kava</h4>
-            <p class="menu-item-desc">Više mlijeka, manje gorčine.</p>
-          </div>
-          <span class="menu-item-price">2,10 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Hladna kava · sezonski</h4>
-            <p class="menu-item-desc">Iced espresso, cold brew i sezonske varijante.</p>
-          </div>
-          <span class="menu-item-price">od 2,80 €</span>
-        </div>
-        <div class="menu-item">
-          <div>
-            <h4>Affogato</h4>
-            <p class="menu-item-desc">Naša najljepša kombinacija kave i gelata.</p>
-          </div>
-          <span class="menu-item-price">3,50 €</span>
-        </div>
-      </div>
-
-      <!-- PHOTOS BELOW -->
-      <div class="flavors-photo-grid flavors-photo-grid--triple" style="margin-top: 64px;">
-        <article class="flavor-card reveal">
-          <div class="flavor-card-img"><img src="brand_assets/affogato.png" alt="Affogato — espresso preko pistacije." loading="lazy" /></div>
-          <div class="flavor-card-body">
-            <h4>Affogato</h4>
-            <p class="flavor-meta">Naša najljepša kombinacija kave i gelata.</p>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Espresso</h4>
+            <span class="menu-card-price">1,40 €</span>
           </div>
         </article>
-        <article class="flavor-card flavor-card-text reveal" style="--accent-1: #C9A878; --accent-2: #5A3A1F;">
-          <div class="flavor-text-mark"><span class="italic">Espresso</span></div>
-          <div class="flavor-card-body">
-            <h4>Espresso</h4>
-            <p class="flavor-meta">Kratka, gusta, ona prava.</p>
+        <article class="menu-card reveal">
+          <div class="menu-card-img menu-card-img--text" style="--accent-1: #D8BC8E; --accent-2: #7A5A3A;">
+            <span class="text-mark"><span class="italic">Macchiato</span></span>
+          </div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Macchiato</h4>
+            <span class="menu-card-price">1,60 €</span>
           </div>
         </article>
-        <article class="flavor-card flavor-card-text reveal" style="--accent-1: #FAF4E6; --accent-2: #C99868;">
-          <div class="flavor-text-mark"><span class="italic">Capuccino</span></div>
-          <div class="flavor-card-body">
-            <h4>Capuccino</h4>
-            <p class="flavor-meta">S nježnom mliječnom pjenom.</p>
+        <article class="menu-card reveal">
+          <div class="menu-card-img menu-card-img--text" style="--accent-1: #FAF4E6; --accent-2: #C99868;">
+            <span class="text-mark"><span class="italic">Capuccino</span></span>
+          </div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Capuccino</h4>
+            <span class="menu-card-price">1,90 €</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-card-img menu-card-img--text" style="--accent-1: #FFFAF0; --accent-2: #C9B58A;">
+            <span class="text-mark"><span class="italic">Bijela</span></span>
+          </div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Bijela kava</h4>
+            <span class="menu-card-price">2,10 €</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-card-img"><img src="brand_assets/affogato.png" alt="Affogato — espresso preko gelata." loading="lazy" /></div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Affogato</h4>
+            <span class="menu-card-price">3,50 €</span>
+          </div>
+        </article>
+        <article class="menu-card reveal">
+          <div class="menu-card-img menu-card-img--text" style="--accent-1: #E8DCC8; --accent-2: #8A5F37;">
+            <span class="text-mark"><span class="italic">Hladna</span></span>
+          </div>
+          <div class="menu-card-body">
+            <h4 class="menu-card-name">Hladna kava</h4>
+            <span class="menu-card-price">od 2,80 €</span>
           </div>
         </article>
       </div>
@@ -538,17 +357,13 @@
 <!-- ============================= CTA ============================= -->
 <section class="section stats">
   <div class="container">
-    <div class="reveal" style="text-align: center; max-width: 720px; margin: 0 auto;">
-      <p class="eyebrow" style="color: var(--gold-light); justify-content: center;">Dođite probati</p>
+    <div class="reveal" style="text-align: center; max-width: 640px; margin: 0 auto;">
       <h2 class="h1" style="color: var(--cream);">
         Vidimo se <span class="italic" style="color: var(--gold-light);">u Sesvetama</span>.
       </h2>
-      <p class="lead" style="color: var(--cream-deep); margin: 32px auto 40px; max-width: 50ch;">
-        Otvoreno svaki dan od 9 do 22 sata. Bez rezervacije, bez čekanja.
-      </p>
-      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
         <a class="btn btn-primary" href="posjetite.html" style="background: var(--cream); color: var(--espresso);">
-          Lokacija i kontakt
+          Lokacija
           <svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
         </a>
         <a class="btn btn-secondary" href="tel:+385912002220" style="border-color: var(--cream); color: var(--cream);">091 200 2220</a>
@@ -563,10 +378,7 @@
     <div class="footer-grid">
       <div>
         <p class="footer-logo"><span class="italic">Divino</span> Gelato</p>
-        <p style="max-width: 36ch;">
-          Slastičarnica u Sesvetama. Gelato, kava, kolači — sve rađeno mirno i pažljivo,
-          baš onako kako i treba.
-        </p>
+        <p style="max-width: 36ch;">Slastičarnica u Sesvetama.</p>
       </div>
       <div class="footer-col">
         <span class="label">Stranica</span>
@@ -588,17 +400,21 @@
       <div class="footer-col">
         <span class="label">Pratite nas</span>
         <ul>
-          <li><a href="https://www.instagram.com/divino_gelato_/" target="_blank" rel="noopener">Instagram · @divino_gelato_</a></li>
+          <li><a href="https://www.instagram.com/divino_gelato_/" target="_blank" rel="noopener">Instagram</a></li>
           <li><a href="https://www.google.com/maps/search/?api=1&query=Gelato+Divino+Sesvete+Jakova+Gotovca+19" target="_blank" rel="noopener">Google karta</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span id="year">2025</span> Divino Gelato · Sva prava pridržana</span>
+      <span>© <span id="year">2025</span> Divino Gelato</span>
       <span class="footer-mark">Sesvete, Zagreb</span>
     </div>
   </div>
 </footer>
+
+<a class="floating-phone" href="tel:+385912002220" aria-label="Nazovite Divino Gelato">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+</a>
 
 <script src="app.js"></script>
 </body>

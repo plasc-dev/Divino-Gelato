@@ -8,6 +8,81 @@
   var yEl = document.getElementById('year');
   if (yEl) yEl.textContent = new Date().getFullYear();
 
+  /* ---------- scroll progress bar ---------- */
+  var progress = document.querySelector('.scroll-progress');
+  if (progress) {
+    var rafScroll = null;
+    function updateProgress() {
+      var docH = document.documentElement.scrollHeight - window.innerHeight;
+      var pct = docH > 0 ? (window.scrollY / docH) * 100 : 0;
+      progress.style.width = Math.min(100, Math.max(0, pct)) + '%';
+      rafScroll = null;
+    }
+    window.addEventListener('scroll', function () {
+      if (rafScroll == null) rafScroll = requestAnimationFrame(updateProgress);
+    }, { passive: true });
+    updateProgress();
+  }
+
+  /* ---------- animated number count-up on scroll into view ---------- */
+  var counters = document.querySelectorAll('.count-up');
+  if (counters.length && 'IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var animateCount = function (el) {
+      var raw = el.getAttribute('data-target') || el.textContent;
+      // parse number; preserve trailing/leading text (€, %, +, etc.)
+      var match = raw.match(/(-?[\d.,]+)/);
+      if (!match) return;
+      var endStr = match[1];
+      // detect Croatian-style decimal: comma as decimal separator
+      var hasComma = endStr.indexOf(',') >= 0;
+      var endNum = parseFloat(endStr.replace(/\./g, '').replace(',', '.'));
+      if (isNaN(endNum)) return;
+      var prefix = raw.slice(0, match.index);
+      var suffix = raw.slice(match.index + match[1].length);
+      var hasDecimal = hasComma ? endStr.split(',')[1] ? endStr.split(',')[1].length : 0 : 0;
+      var duration = 1200;
+      var t0 = null;
+      el.classList.add('is-counting');
+      function tick(t) {
+        if (t0 == null) t0 = t;
+        var p = Math.min(1, (t - t0) / duration);
+        // easeOutCubic
+        var eased = 1 - Math.pow(1 - p, 3);
+        var val = endNum * eased;
+        var out = hasDecimal > 0
+          ? val.toFixed(hasDecimal).replace('.', ',')
+          : Math.round(val).toString();
+        el.textContent = prefix + out + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+        else el.classList.remove('is-counting');
+      }
+      requestAnimationFrame(tick);
+    };
+    var countObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) {
+          animateCount(e.target);
+          countObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    counters.forEach(function (el) {
+      // store target text once
+      if (!el.getAttribute('data-target')) el.setAttribute('data-target', el.textContent.trim());
+      // reset visible text to 0-ish until animation runs
+      var raw = el.getAttribute('data-target');
+      var m = raw.match(/(-?[\d.,]+)/);
+      if (m) {
+        var prefix = raw.slice(0, m.index);
+        var suffix = raw.slice(m.index + m[1].length);
+        var hasComma = m[1].indexOf(',') >= 0;
+        var zero = hasComma ? '0,0' : '0';
+        el.textContent = prefix + zero + suffix;
+      }
+      countObs.observe(el);
+    });
+  }
+
   /* ---------- mobile hamburger nav ---------- */
   var navToggle = document.querySelector('.nav-toggle');
   if (navToggle) {
