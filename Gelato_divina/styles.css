@@ -1448,13 +1448,27 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
   font-size: 0.875rem;
   color: var(--cocoa);
   width: max-content;
+  max-width: calc(100% - 16px);
   margin-left: auto; margin-right: auto;
+  flex-wrap: wrap;
+  text-align: center;
 }
 .menu-note strong {
   font-family: var(--font-display);
   font-weight: 500;
   color: var(--gold-deep);
   font-size: 1.125rem;
+}
+@media (max-width: 640px) {
+  .menu-note {
+    flex-direction: column;
+    gap: 4px;
+    padding: 14px 22px;
+    font-size: 0.8125rem;
+    border-radius: 16px;
+    line-height: 1.4;
+  }
+  .menu-note strong { font-size: 1rem; }
 }
 
 .flavor-card {
