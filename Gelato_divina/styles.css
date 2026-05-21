@@ -1907,3 +1907,37 @@ body.nav-open .nav-toggle-bar:nth-child(3) { transform: translateY(-5.25px) rota
 }
 @media (max-width: 768px) { .map-wrap { aspect-ratio: 4 / 3; } }
 .map-wrap iframe { width: 100%; height: 100%; border: 0; display: block; }
+
+.map-cta {
+  position: absolute;
+  bottom: 16px; right: 16px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border-radius: 999px;
+  background: var(--espresso);
+  color: var(--cream);
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.8125rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 8px 24px -6px rgba(61,46,31,0.4);
+  transition: background 220ms var(--ease-out),
+              transform 220ms var(--ease-out),
+              box-shadow 280ms var(--ease-out);
+}
+.map-cta:hover {
+  background: var(--cocoa);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -8px rgba(61,46,31,0.5);
+}
+.map-cta:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.map-cta svg { transition: transform 200ms var(--ease-out); }
+.map-cta:hover svg { transform: translate(2px, -2px); }
+@media (max-width: 480px) {
+  .map-cta { bottom: 12px; right: 12px; padding: 10px 14px; font-size: 0.75rem; gap: 6px; }
+}
